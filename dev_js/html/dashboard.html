@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menu Hamburger -->
+    <div class="hamburger-menu">
+      <button id="menu-btn">
+        ☰
+      </button>
+    </div>
+
+    <aside class="sidebar">
+      <h2>Gestion des Cours</h2>
+      <nav class="nav">
+        <a href="#" class="nav-item active" data-entity="dashboard">Dashboard</a>
+        <a href="#" class="nav-item" data-entity="etudiants">Étudiants</a>
+        <a href="#" class="nav-item" data-entity="enseignants">Enseignants</a>
+        <a href="#" class="nav-item" data-entity="classes">Classes</a>
+        <a href="#" class="nav-item" data-entity="absences">Absences</a>
+        <a href="#" class="nav-item" data-entity="cours">Cours</a>
+      </nav>
+      <button id="logout-btn"   class="btn-logout">Déconnexion</button>
+    </aside>
+
+    <main class="content">
+      <header>
+        <h1 id="entity-title">Dashboard</h1>
+        <div class="search-container" style="display: none;">
+          <input type="text" id="search-bar" placeholder="Rechercher...">
+          <span class="search-icon">🔍</span>
+        </div>
+        <div class="actions">
+          <button id="add-entry-btn" class="btn">Ajouter</button>
+          <button id="reset-data-btn" class="btn btn-danger">Réinitialiser</button>
+        </div>
+      </header>
+
+      <!-- Vue par défaut avec les graphiques -->
+      <div id="dashboard-view" class="charts-container">
+        <div class="chart-box">
+          <canvas id="teacherHours"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="absencesTrend"></canvas>
+        </div>
+      </div>
+
+      <!-- Vue du tableau (initialement cachée) -->
+      <div id="table-view" class="table-container" style="display: none;">
+        <table>
+          <thead>
+            <tr id="table-head"></tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script defer src="../js/dashboard.js"></script>
+</body>
+</html> 
