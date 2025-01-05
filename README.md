@@ -19,5 +19,5 @@
 
 
 ## Auteur(s)
--khouchaf mohamed  amine
--email : khouchafamine1@gamil.com
+-khouchaf mohamed amine .
+-email:khouchafamine1@gmail.com
